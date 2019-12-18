@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Key公式サイト</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      background-image: url('../img/all/back35.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .top {
+      height: 1040px;
+      width: 100vw;
+      background-image: url('../img/all/key14.jpg');
+      background-size: cover;
+    }
+
+    .all {
+      height: 100%;
+      width: 1140px;
+      margin: auto;
+
+    }
+
+    .swiper-container {
+      height: 620px;
+      margin: 15px;
+    }
+
+    .black-1 {
+      width: 100%;
+      height: 200px;
+      display: flex;
+    }
+
+    #slideshow {
+      width: 100%;
+      height: 620px;
+      margin: 0 auto;
+      /*設置在頁面水平居中*/
+      overflow: hidden;
+      position: relative;
+    }
+
+    #slideshow img {
+      width: 100%;
+      position: absolute;
+      /*圖片採取绝對定位，均位于左上角，重叠在一起*/
+      top: 0;
+      left: 0;
+      opacity: 0;
+      /*初始不透明度為0，圖片都看不见*/
+      transition: opacity 1s linear;
+      /*--重點--定義一個關于透明度的transition*/
+      border-radius: 50px;
+    }
+
+    #slideshow img.active {
+      opacity: 1;
+      /*有active類的圖片不透明度為1，即顯示圖片*/
+    }
+
+    /*-- 設置頁碼的樣式 --*/
+    #slideshow div {
+      width: 100%;
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+    }
+
+    #slideshow span {
+      display: inline-block;
+      width: 25px;
+      line-height: 25px;
+      /*當只有一行文本時height等于line-height*/
+      border-radius: 25px;
+      /*設置頁碼為圓形*/
+      margin: 0 15px;
+      background: white;
+      font-size: 16px;
+    }
+
+    #slideshow span.active {
+      color: white;
+      background: #FFDD55;
+    }
+
+    /*-- 設置圖片描述文本的樣式 --*/
+    #slideshow p {
+      position: absolute;
+      top: 30px;
+      left: -400px;
+      /*相對于輪播圖左侧左移400px*/
+      line-height: 30px;
+      padding: 5px 30px;
+      font-size: 20px;
+      color: white;
+      background-color: rgba(100, 100, 100, 0.6);
+      /*用rgba設置一個带透明度的背景颜色*/
+      opacity: 0;
+      transition: all 0.5s;
+      border-radius: 50px;
+    }
+
+    #slideshow p.active {
+      left: 0;
+      opacity: 1;
+    }
+
+    .black-2 {
+      height: 135px;
+      width: 100%;
+      display: flex;
+    }
+
+    .black-2 .butter {
+      height: 65%;
+      width: 22%;
+      justify-content: flex-start;
+      line-height: 500%;
+      border-radius: 50%;
+      margin-right: 50px;
+      background-color: #289dcc;
+      text-align: center;
+      color:pink;
+      transition: all .5s;
+      -webkit-text-fill-color: transparent;
+    }
+      #black-2-1:hover{
+        font-size:22px;
+        
+        transition: 0.3s;
+      }
+    .black-2 .pink {
+      background: rgba(231, 72, 234, 1);
+      background: -moz-linear-gradient(45deg, rgba(231, 72, 234, 1) 0%, rgba(75, 26, 188, 1) 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(231, 72, 234, 1)), color-stop(100%, rgba(75, 26, 188, 1)));
+      background: -webkit-linear-gradient(45deg, rgba(231, 72, 234, 1) 0%, rgba(75, 26, 188, 1) 100%);
+      background: -o-linear-gradient(45deg, rgba(231, 72, 234, 1) 0%, rgba(75, 26, 188, 1) 100%);
+      background: -ms-linear-gradient(45deg, rgba(231, 72, 234, 1) 0%, rgba(75, 26, 188, 1) 100%);
+      background: linear-gradient(45deg, rgba(231, 72, 234, 1) 0%, rgba(75, 26, 188, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e748ea', endColorstr='#4b1abc', GradientType=1);
+    }
+
+    .black-2 .blue {
+      background: rgba(73, 155, 234, 1);
+      background: -moz-linear-gradient(45deg, rgba(73, 155, 234, 1) 0%, rgba(26, 188, 156, 1) 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(73, 155, 234, 1)), color-stop(100%, rgba(26, 188, 156, 1)));
+      background: -webkit-linear-gradient(45deg, rgba(73, 155, 234, 1) 0%, rgba(26, 188, 156, 1) 100%);
+      background: -o-linear-gradient(45deg, rgba(73, 155, 234, 1) 0%, rgba(26, 188, 156, 1) 100%);
+      background: -ms-linear-gradient(45deg, rgba(73, 155, 234, 1) 0%, rgba(26, 188, 156, 1) 100%);
+      background: linear-gradient(45deg, rgba(73, 155, 234, 1) 0%, rgba(26, 188, 156, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#499bea', endColorstr='#1abc9c', GradientType=1);
+    }
+
+    .black-2 .orange {
+      background: rgba(255, 193, 7, 1);
+      background: -moz-linear-gradient(45deg, rgba(255, 193, 7, 1) 0%, rgba(255, 87, 34, 1) 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255, 193, 7, 1)), color-stop(100%, rgba(255, 87, 34, 1)));
+      background: -webkit-linear-gradient(45deg, rgba(255, 193, 7, 1) 0%, rgba(255, 87, 34, 1) 100%);
+      background: -o-linear-gradient(45deg, rgba(255, 193, 7, 1) 0%, rgba(255, 87, 34, 1) 100%);
+      background: -ms-linear-gradient(45deg, rgba(255, 193, 7, 1) 0%, rgba(255, 87, 34, 1) 100%);
+      background: linear-gradient(45deg, rgba(255, 193, 7, 1) 0%, rgba(255, 87, 34, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc107', endColorstr='#ff5722', GradientType=1);
+    }
+
+    .black-2 .green {
+      background: rgba(5, 118, 255, 1);
+      background: -moz-linear-gradient(45deg, rgba(5, 118, 255, 1) 0%, rgba(36, 248, 255, 1) 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(5, 118, 255, 1)), color-stop(100%, rgba(36, 248, 255, 1)));
+      background: -webkit-linear-gradient(45deg, rgba(5, 118, 255, 1) 0%, rgba(36, 248, 255, 1) 100%);
+      background: -o-linear-gradient(45deg, rgba(5, 118, 255, 1) 0%, rgba(36, 248, 255, 1) 100%);
+      background: -ms-linear-gradient(45deg, rgba(5, 118, 255, 1) 0%, rgba(36, 248, 255, 1) 100%);
+      background: linear-gradient(45deg, rgba(5, 118, 255, 1) 0%, rgba(36, 248, 255, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0576ff', endColorstr='#24f8ff', GradientType=1);
+    }
+
+    .butter:hover {
+      text-shadow: 0px 0px 0px rgba(255, 255, 255, .75);
+    }
+
+    .black-font-1 {
+      width: 100%;
+      margin-bottom: 50px;
+      line-height: 50px;
+      font-size: 35px;
+      text-align: center;
+    }
+
+    .black-font-2 {
+      width: 100%;
+      text-align: center;
+    }
+
+    .tabs-btn-group {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .tabs-btn-group .tabs-btn {
+      width: 100%;
+      height: 300px;
+      background-image: url('../img/clannad/game.jpg');
+      background-size: cover;
+      border-radius: 50px;
+      margin-right: 20px;
+    }
+
+    .tabs-btn-group .tabs-btn-1 {
+      background-image: url('../img/air/game.jpg');
+    }
+
+    .tabs-btn-group .tabs-btn-2 {
+      background-image: url('../img/kanon/game.jpg');
+    }
+
+    .tabs-btn-group .tabs-btn.active {
+      background-color: hotpink;
+      font-size: 20px;
+    }
+
+    .tabs-content-group .tabs-content {
+      background-image: url('../img/air/background.jpg');
+      background-size: cover;
+      border-radius: 50px;
+      padding: 20px 10px;
+      display: none;
+    }
+
+    .tabs-content-group .tabs-content.active {
+      display: block;
+    }
+
+    .black-font-3 {
+      width: 100%;
+      text-align: center;
+    }
+
+    .font-t {
+      width: 100%;
+      height: 700px;
+      background-image: url(../img/clannad/background.jpg);
+      background-size: cover;
+      display: flex;
+      border-radius: 50px;
+      margin-bottom: 25px;
+    }
+
+    .font-t-r {
+      width: 50%;
+      display: flex;
+    }
+
+    .font-t-l {
+      width: 50%;
+      justify-content: flex-end;
+      display: flex;
+    }
+
+    .font-t-r-r {
+      width: 33%;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .font-t-r-m {
+      width: 34%;
+      justify-content: flex-end;
+      text-align: center;
+      
+    }
+
+    .font-t-r-l {
+      width: 33%;
+      text-align: center;
+    }
+
+    .font-t-l-l {
+      width: 33%;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .font-t-l-m {
+      width: 34%;
+      justify-content: flex-end;
+      text-align: center;
+    }
+
+    .font-t-l-r {
+      width: 33%;
+      text-align: center;
+    }
+
+    .font-mid {
+      width: 100%;
+      height: 577px;
+      background-size: contain;
+      border-radius: 50px;
+      background-image: url(../img/air/background.jpg);
+      margin-bottom: 25px;
+    }
+
+    .font-mid-m {
+      margin: auto;
+      width: 50%;
+      height: 75%;
+      display: flex;
+    }
+
+    .font-mid-m-l {
+      width: 33%;
+    }
+
+    .font-mid-m-m {
+      width: 34%;
+    }
+
+    .font-mid-m-r {
+      width: 33%;
+      text-align: right;
+    }
+
+    .font-b {
+      width: 100%;
+      height: 550px;
+      background-size: cover;
+      border-radius: 50px;
+      background-image: url(../img/kanon/background2.jpg);
+      margin-bottom: 25px;
+    }
+
+    .font-b-mid {
+      margin: auto;
+      width: 50%;
+      height: 75%;
+      display: flex;
+    }
+
+    .font-b-mid-l {
+      width: 33%;
+    }
+
+    .font-b-mid-m {
+      width: 34%;
+    }
+
+    .font-b-mid-r {
+      width: 33%;
+      text-align: right;
+    }
+
+    .black-4 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .black-5{
+      display: flex;
+      width:100%;
+      height:550px;
+    }
+    .burger{
+        width:100%;
+        height:300px;
+        background-image: url(../img/clannad/12345678.jpg);
+        background-size: cover;
+        border-radius: 50px;
+        position: relative;
+        padding-left: 20px;
+        margin-left: 20px;
+        opacity: 70%;
+    }
+
+    .burger:hover .burger-text  {
+      bottom: -200px;
+      opacity: 1;
+    }
+    .burger:hover .burger-text-2{
+      bottom: -190px;
+      opacity: 1;
+    }
+    .burger:hover .burger-text-3{
+      bottom: -250px;
+      opacity: 1;
+    }
+
+    .burger-text {
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      bottom: 0px;
+      left: 10%;
+    }
+     .burger-text-2 {
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      bottom: 0px;
+      left: 10%;
+    }
+   .burger-text-3 {
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      bottom: 0px;
+      left: 10%;
+    }
+    .burger-2{
+        background-image: url(../img/air/123456.jpg);
+        background-size: cover;
+        opacity: 70%;
+    }
+    .burger-3{
+        background-image: url(../img/kanon/12345.jpg);
+        background-size: cover;
+        opacity: 70%;
+    }
+    .black-6{
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
+    .black-7{
+      width: 100%;
+      height: 950px;
+      display: flex;
+      
+    }
+    .black-7-l{
+      width: 50%;
+      height: 1024px;
+      text-align: center;
+      padding-left: -50px;
+      
+    }
+    .black-7-l-t{
+      width: 100%;
+      height: 60%;
+      background-image: url(../img/all/1-2.jpg);
+      background-size: cover;
+      position: relative;
+      opacity: 70%;
+      border-radius: 50px;
+    }
+    .black-7-l-t:hover .black-7-l-b-text {
+      bottom: -250px;
+      opacity: 1;
+    }
+    .black-7-l-b-text{
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      bottom: 0px;
+      left: 10%;
+
+    }
+ .black-7-r{
+   width: 50%;
+   height: 100%;
+ }
+.black-7-r-t{
+  width: 100%;
+  height: 40%;
+  display:flex;
+}
+.black-7-r-t-l{
+  width: 50%;
+  height: 100%;
+}
+.black-7-r-t-l-t{
+  width: 100%;
+  height: 35%;
+  background-image: url(../img/clannad/1-3.png);
+  background-size:cover;
+  border-radius: 50%;
+  opacity:80%;
+}
+.black-7-r-t-l-b{
+  width: 100%;
+  height: 5%;
+  text-align: center;
+  font-size: 24px;
+  
+}
+.black-7-r-t-r{
+  width: 50%;
+  height: 100%;
+}
+.black-7-r-b{
+  width: 100%;
+  height: 35%;
+}
+.black-7-r-t-r-t{
+  width: 100%;
+  height: 35%;
+  background-image: url(../img/air/1234567.jpg);
+  background-size:cover;
+  border-radius: 50%;
+  opacity:80%;
+}
+.black-7-r-t-r-b{
+  width: 100%;
+  height: 5%;
+  text-align: center;
+  font-size: 24px;
+}
+.black-7-r-b{
+  width: 100%;
+  height: 20%;
+
+}
+.black-7-r-b-center{
+  width: 40%;
+  height: 50%;
+  margin: auto;
+  background-image: url(../img/kanon/images.jpg);
+  background-size:cover;
+  border-radius: 80%;
+  opacity:85%;
+}
+.black-7-r-b-text{
+  width: 40%;
+  height: 50%;
+  margin: auto;
+  text-align: center;
+}
+.black-8{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 25px;
+  
+}
+.black-9{
+  width: 100%;
+  display: flex;
+}
+.black-9-r{
+  width: 50%;
+}
+.black-9-l{
+  width: 50%;
+}
+#example-3 .image{
+    width: 100%;
+    height: 300px;
+    background-image: url(../img/all/back6.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10%;
+    margin-right: 20px;
+    text-align: center;
+}
+#example-3 .image .mask{
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:absolute;
+    bottom: -50%;
+    left: 0;
+    transition: 0.3s;
+}
+
+#example-3 .image:hover .mask{
+    bottom: 0;
+}
+#example-3 .image .mask .text{
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+}
+#example-1 .image-1{
+    width: 100%;
+    height: 300px;
+    background-image: url(../img/all/back14.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10%;
+    margin-left: 20px;
+    text-align: center;
+}
+#example-1 .image-1 .mask-1{
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:absolute;
+    bottom: -50%;
+    left: 0;
+    transition: 0.3s;
+}
+#example-1 .image-1:hover .mask-1{
+    bottom: 0;
+}
+#example-1 .image-1 .mask-1 .text-1{
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+}
+.black-10{
+  width: 100%;
+  display: flex;
+}
+.black-10-r{
+  width: 50%;
+}
+.black-10-l{
+  width: 50%;
+}
+#example-2 .image-2{
+    width: 100%;
+    height: 300px;
+    background-image: url(../img/all/back19.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10%;
+    margin-right: 20px;
+    text-align: center;
+}
+#example-2 .image-2 .mask-2{
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:absolute;
+    bottom: -60%;
+    left: 0;
+    transition: 0.3s;
+}
+#example-2 .image-2:hover .mask-2{
+    bottom: 0;
+}
+#example-2 .image-2 .mask-2 .text-2{
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+}
+#example-4 .image-4{
+    width: 100%;
+    height: 300px;
+    background-image: url(../img/all/back16.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10%;
+    margin-left: 20px;
+    text-align: center;
+}
+#example-4 .image-4 .mask-4{
+    width: 100%;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:absolute;
+    bottom: -60%;
+    left: 0;
+    transition: 0.3s;
+    
+}
+#example-4 .image-4:hover .mask-4{
+    bottom: 0;
+}
+#example-4 .image-4 .mask-4 .text-4{
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+}
+.card {
+    height: 560px;
+    width: 50%;
+    margin: 10px 10px 20px 10px;
+    position: relative;
+    cursor: pointer;
+    -webkit-perspective: 600px;
+    perspective: 600px;
+    background-image: url(../img/all/back10.jpg);
+    background-size:cover;
+    margin: auto;
+    display: flex;
+    
+    
+}
+.l{
+  width: 50%;
+}
+.r{
+  width:50%;
+}
+
+.card .front {
+    z-index: 900;
+    background: #fff;
+}
+
+/* 一開始讓back轉成90度，你就看不到拉 (但是這邊不一定要這樣做) */
+
+.card .back {
+    z-index: 900;
+    background: #fff;
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    
+}
+
+.card .front, .card .back {
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border: 1px solid #dddddd;
+    padding: 1px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    background-image: url(../img/all/back38.jpg);
+    background-size: cover;
+    
+    /* 卡片翻面的動畫時間 */
+
+    -webkit-transition-duration: 3s, 1s;
+    -moz-transition-duration: 3s, 1s;
+    -ms-transition-duration: 3s, 1s;
+    -o-transition-duration: 3s, 1s;
+    transition-duration: 3s, 1s;
+    
+}
+/* flip */
+/* 讓front轉到看不見 */
+.card.flip .front {
+    z-index: 900;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg); 
+    background-image: url(../img/kanon/1-2.jpg);
+    background-size: cover;
+}
+/* 將back轉出來 */
+.card.flip .back {
+    z-index: 1000;
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+    background-image: url(../img/air/1-8.jpg);
+    background-size: cover;
+}
+.black-11-text{
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 20px;
+  font-size: 24px;
+}
+.footer{
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  text-align: center;
+  margin: auto;
+  
+}
+.footer-logo{
+  width: 100px;
+  height: 70px;
+  margin: auto;
+  background-image: url(../img/all/key15.jpg);
+  background-size:cover;
+  
+}
+.footer-font{
+  width: 200px;
+  height: 30px;
+text-align: center;
+margin:  auto;
+}
+.Z1{
+                height: 100px;
+                width: 100px;
+                background-color: brown;
+                border-radius: 50%; 
+                text-align: center;
+                line-height: 100px;
+                position: fixed;
+                right: 10px;
+                bottom: 10px;
+            }
+            .Z1:hover {
+            background-color: yellow;
+            transition:0.1s;
+        }
+
+  </style>
+</head>
+
+<body>
+  <div id = "top" class="top"></div>
+  
+  <div class="all">
+    <div class="swiper-container">
+      <div id="slideshow">
+        <!-- 插入輪播的圖片們 -->
+        <img class="active" src='../img/clannad/123.jpg' />
+        <img src='../img/air/1234.jpg' />
+        <img src='../img/kanon/1234.jpg' />
+        <!-- 插入輪播的頁碼們 -->
+        <div>
+          <span class="active">1</span>
+          <span>2</span>
+          <span>3</span>
+        </div>
+        <!-- 插入圖片的描述們 -->
+        <p class="active">這是第一幅圖片哈哈哈</p>
+        <p>这是第二幅圖片咩</p>
+        <p>到第三幅了！</p>
+      </div>
+      <!-- If we need navigation buttons -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <div id = "black-2-1"class="black-2">
+      <div class="butter pink"><a href="#bot1">
+          <h2>KEY作品</h2>
+        </a></div>
+      <div class="butter blue"><a href="#bot2">
+          <h2>KEY三大作品</h2>
+        </a></div>
+      <div class="butter orange"><a href="#bot3">
+          <h2>KEY作品特點</h2>
+        </a></div>
+      <div class="butter green"><a href="#bot4">
+          <h2>KEY介紹</h2>
+        </a></div>
+    </div>
+    <div id = "bot1"class="black-font-1">
+      <h1>KEY作品</h1>
+    </div>
+    <div class="black-font-2">
+      <h2>點擊圖片會有遊戲介紹</h2>
+    </div>
+    <div class="alls">
+      <div class="tabs-btn-group">
+        <div class="tabs-btn"></div>
+        <div class="tabs-btn tabs-btn-1"></div>
+        <div class="tabs-btn tabs-btn-2"></div>
+      </div>
+      <div class="tabs-content-group">
+        <div class=" tabs-content">
+          <h2>遊戲介紹</h2>
+          <span>遊戲開始時間是某年的4月14日。在某個小鎮，
+            主角岡崎朋也因為家庭的因素而喪失了生活在
+            這個地方的希望；與春原陽平為朋友，在光坂
+            高等學校過著潦倒的生活，盼望終有一天能夠
+            離開所在的小鎮。在高三的一個早晨，通往學
+            校的坡道前發現了一個止步不前的女孩，在朋
+            也認識了這個名為「古河渚」的女孩後，他的
+            生活開始有了重大的變化。校園篇為主角和女
+            主角們之間所發生的事件，After story為主角
+            在學校畢業之後，以及家庭生活，其中還關聯
+            著「幻想世界」，CLANNAD就是由這三個要
+            素所組成的故事。</span>
+        </div>
+        <div class=" tabs-content">
+          <h2>遊戲介紹</h2>
+          <span> DREAM篇
+            在第一條故事路線「DREAM篇」之中，雜耍藝人
+            國崎往人依從已故母親的遺言，不斷在日本各地流
+            浪並尋找著「天空中的女孩」。
+            SUMMER篇
+            發生1,000年前的平安時代。武士柳也被派遣擔任
+            傳說中的翼人後代神奈備命的隨身，並在這裡結
+            識了正在學習法術的女官裏葉。儘管備命為遊戲
+            中虛構種族翼人的最後後裔，但是她就如同一名
+            囚犯般被迫軟禁在自己的神殿中；而儘管其背上
+            有著常人沒有的翅膀，但是備命仍然被迫不能擅
+            自飛離神殿外的城牆，甚至也不能去探望同樣被
+            軟禁於其他地方的母親。</span>
+        </div>
+        <div class=" tabs-content">
+          <h2>遊戲介紹</h2>
+          <span> 這是一個描述因家庭因素而到北國小鎮寄住
+            在身為表親的少女家中的少年與在那小鎮中
+            相遇的少女們的戀愛故事，時間是
+            1999年1月6日。作為一個遊戲，在故事中
+            玩家必須從這些少女們中選出一人來繼續
+            推進劇情。即便是最初的十八禁版中情色的
+            成分也相當稀薄，主要是以少女們的背景及
+            其相關的故事為重點內容。
+            許多的愛好者給了被劇情感動落淚的絕佳評
+            價，自此之後，在遊戲中加入令人感傷感動
+            的要素，通稱「泣きゲー（催淚遊戲）」類
+            型的遊戲開始流行，對此後這類文字冒險戀
+            愛遊戲帶來了相當大的影響。</span>
+        </div>
+      </div>
+    </div>
+    <div class="black-font-3">
+      <h2>Key作品(動畫級數列表)</h2>
+      <H3>Clannad-兩季</H3>
+    </div>
+    <div class="black-3">
+      <div class="font-t">
+        <div class="font-t-r">
+          <div class="font-t-r-r">
+            <h2>話數</h2>
+            <p>01</p>
+            <p>02</p>
+            <p>03</p>
+            <p>04</p>
+            <p>05</p>
+            <p>06</p>
+            <p>07</p>
+            <p>08</p>
+            <p>09</p>
+            <p>10</p>
+            <p>11</p>
+            <p>12</p>
+            <p>13</p>
+            <p>14</p>
+            <p>15</p>
+            <p>16</p>
+            <p>17</p>
+            <p>18</p>
+            <p>19</p>
+            <p>20</p>
+            <p>21</p>
+            <p>22</p>
+          </div>
+          <div class="font-t-r-m">
+            <h1>標題</h1>
+            <h3>桜舞い散る坂道で</h3>
+            <h3>最初の一歩</h3>
+            <h3>涙のあとにもう一度</h3>
+            <h3>仲間をさがそう</h3>
+            <h3>彫刻のある風景</h3>
+            <h3>姉と妹の創立者祭</h3>
+            <h3>星形の気持ち</h3>
+            <h3>黄昏に消える風</h3>
+            <h3>夢の最後まで</h3>
+            <h3>天才少女の挑戦</h3>
+            <h3>放課後の狂想曲</h3>
+            <h3>かくされた世界</h3>
+            <h3>思い出の庭を</h3>
+            <h3>Theory of Everything</h3>
+            <h3>困った問題 </h3>
+            <h3>3 On 3</h3>
+            <h3>不在の空間</h3>
+            <h3>逆転の秘策</h3>
+            <h3>新しい生活</h3>
+            <h3>秘められた過去</h3>
+            <h3>学園祭に向けて</h3>
+            <h3>影二つ</h3>
+          </div>
+          <div class="font-t-r-l">
+            <h1>首播日期</h1>
+            <h2>2007-10-04</h2>
+            <h2>2007-10-11</h2>
+            <h2>2007-10-18</h2>
+            <h2>2007-10-25</h2>
+            <h2>2007-11-01</h2>
+            <h2>2007-11-08</h2>
+            <h2>2007-11-15</h2>
+            <h2>2007-11-22</h2>
+            <h2>2007-11-29</h2>
+            <h2>2007-12-06</h2>
+            <h2>2007-12-13</h2>
+            <h2>2007-12-20</h2>
+            <h2>2008-01-10</h2>
+            <h2>2008-01-17</h2>
+            <h2>2008-01-24</h2>
+            <h2>2008-01-31</h2>
+            <h2>2008-02-07</h2>
+            <h2>2008-02-14</h2>
+            <h2>2008-02-18</h2>
+            <h2>2008-03-06</h2>
+            <h2>2008-03-13</h2>
+            <h2>2007-03-20</h2>
+          </div>
+          <!-- 話數     標題                        首播日期
+                  <h1>01  <span>櫻花飛舞的坡道上 </span>  <span>2007-10-04</span> </h1>
+                  <h1>02  最初的一步 2007-10-11</h1>
+                  <h1>03  流淚之後再來一次 2007-10-18</h1>
+                  <h1>22   形影成雙                  2008-3-20</h1> -->
+        </div>
+        <div class="font-t-l">
+          <div class="font-t-l-l">
+            <h2>話數</h2>
+            <p>01</p>
+            <p>02</p>
+            <p>03</p>
+            <p>04</p>
+            <p>05</p>
+            <p>06</p>
+            <p>07</p>
+            <p>08</p>
+            <p>09</p>
+            <p>10</p>
+            <p>11</p>
+            <p>12</p>
+            <p>13</p>
+            <p>14</p>
+            <p>15</p>
+            <p>16</p>
+            <p>17</p>
+            <p>18</p>
+            <p>19</p>
+            <p>20</p>
+            <p>21</p>
+            <p>22</p>
+          </div>
+          <div class="font-t-l-m">
+            <h1>標題</h1>
+            <h3>夏の終わりのサヨナラ</h3>
+            <h3>いつわりの愛をさがし</h3>
+            <h3>すれちがう心</h3>
+            <h3>あの日と同じ笑顔で</h3>
+            <h3>君のいた季節</h3>
+            <h3>ずっとあなたのそばに</h3>
+            <h3>彼女の居場所</h3>
+            <h3>勇気ある戦い</h3>
+            <h3>坂道の途中</h3>
+            <h3>始まりの季節</h3>
+            <h3>約束の創立者祭</h3>
+            <h3>突然の出来事</h3>
+            <h3>卒業</h3>
+            <h3>新しい家族</h3>
+            <h3>夏の名残に</h3>
+            <h3>白い闇</h3>
+            <h3>夏時間</h3>
+            <h3>大地の果て</h3>
+            <h3>家路</h3>
+            <h3>汐風の戯れ</h3>
+            <h3>世界の終わり</h3>
+            <h3>小さな手のひら</h3>
+          </div>
+          <div class="font-t-l-r">
+            <h1>首播日期</h1>
+            <h2>2008-10-03</h2>
+            <h2>2008-10-10</h2>
+            <h2>2008-10-17</h2>
+            <h2>2008-10-24</h2>
+            <h2>2008-10-31</h2>
+            <h2>2008-11-07</h2>
+            <h2>2008-11-14</h2>
+            <h2>2008-11-21</h2>
+            <h2>2008-11-28</h2>
+            <h2>2008-12-05</h2>
+            <h2>2008-12-12</h2>
+            <h2>2008-12-19</h2>
+            <h2>2009-01-08</h2>
+            <h2>2009-01-15</h2>
+            <h2>2009-01-22</h2>
+            <h2>2009-01-29</h2>
+            <h2>2009-02-02</h2>
+            <h2>2009-02-12</h2>
+            <h2>2009-02-19</h2>
+            <h2>2009-02-26</h2>
+            <h2>2009-03-05</h2>
+            <h2>2009-03-12</h2>
+          </div>
+        </div>
+      </div>
+      <div class="font-mid">
+        <div class="font-mid-m">
+          <div class="font-mid-m-l">
+            <h1>話數</h1>
+            <h2>
+              <p>01</p>
+              <p>02</p>
+              <p>03</p>
+              <p>04</p>
+              <p>05</p>
+              <p>06</p>
+              <p>07</p>
+              <p>08</p>
+              <p>09</p>
+              <p>10</p>
+              <p>11</p>
+              <p>12</p>
+            </h2>
+          </div>
+          <div class="font-mid-m-m">
+            <h1>標題</h1>
+            <h3>かぜ～breeze～</h3>
+            <h3>まち～town～ </h3>
+            <h3>こえ～whisper～</h3>
+            <h3>はね～plume～</h3>
+            <h3>つばさ～wing～</h3>
+            <h3>ほし～star～</h3>
+            <h3>ゆめ～dream～</h3>
+            <h3>なつ～summer～</h3>
+            <h3>つき～moon～ </h3>
+            <h3>ひかり～light～</h3>
+            <h3>うみ～sea～</h3>
+            <h3>そら～air～ </h3>
+          </div>
+          <div class="font-mid-m-r">
+            <h1>首播日期</h1>
+            <h2>2005-01-06</h2>
+            <h2>2005-01-13</h2>
+            <h2>2005-01-20</h2>
+            <h2>2005-01-27</h2>
+            <h2>2005-02-03</h2>
+            <h2>2005-02-10</h2>
+            <h2>2005-02-17</h2>
+            <h2>2005-02-24</h2>
+            <h2>2005-03-03</h2>
+            <h2>2005-03-10</h2>
+            <h2>2005-03-17</h2>
+            <h2>2005-03-24</h2>
+          </div>
+        </div>
+      </div>
+      <div class="font-b">
+        <div class="font-b-mid">
+          <div class="font-b-mid-l">
+            <h1>話數</h1>
+            <h2>
+              <p>01</p>
+              <p>02</p>
+              <p>03</p>
+              <p>04</p>
+              <p>05</p>
+              <p>06</p>
+              <p>07</p>
+              <p>08</p>
+              <p>09</p>
+              <p>10</p>
+              <p>11</p>
+              <p>12</p>
+              <p>13</p>
+            </h2>
+          </div>
+          <div class="font-b-mid-m">
+            <h1>標題</h1>
+            <h3>雪の少女</h3>
+            <h3>日溜まりの街</h3>
+            <h3>たった一つのさな記憶</h3>
+            <h3>夜へ</h3>
+            <h3>The Fox and the Grapes</h3>
+            <h3>彼女たちの見解</h3>
+            <h3>舞踏会</h3>
+            <h3>少女の檻</h3>
+            <h3>笑顔の向こう側に</h3>
+            <h3>冬の花火</h3>
+            <h3>約束</h3>
+            <h3>夢の跡</h3>
+            <h3>風の辿り着く場所</h3>
+          </div>
+          <div class="font-b-mid-r">
+            <h1>首播日期</h1>
+            <h2>2002-01-30</h2>
+            <h2>2002-02-06</h2>
+            <h2>2002-02-13</h2>
+            <h2>2002-02-13</h2>
+            <h2>2002-02-20</h2>
+            <h2>2002-02-20</h2>
+            <h2>2002-02-27</h2>
+            <h2>2002-03-13</h2>
+            <h2>2002-03-20</h2>
+            <h2>2002-03-20</h2>
+            <h2>2002-03-27</h2>
+            <h2>2002-03-27</h2>
+            <h2>2002-03-27</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="bot2" class="black-4">
+      <h1>Key三大作品</h1>
+    </div>
+    <div class="black-5">
+    <div class="burger"><h3>CLANNAD(春系列)故事「家庭」主題</h3>
+      <div class="burger-text"><span> 簡介:
+        CLANNAD這個詞中，Clann在凱爾特語中的意思是“家族”。
+        動畫部分，2007年9月15日電影版動畫于日本公開上映。
+        動畫于日本播放，其第二季‘Clannad After Story’
+        也于2008年10月2日开始播放。
+        內容:
+        家庭 . . 被我拒絕的地方： Clannad的男主角——罔崎朋也
+        ，是一個拒絕與家人交流、留在家裡的人。幼年時，母親
+        因故去世，父親因此整日借酒澆愁，在初中時，因為一次家
+        庭暴力而使得父子關係落到了谷底。從此以後，朋也與父親形同陌路。</span></div>
+    </div>
+      <div class="burger burger-2"><h3>AIR(夏系列)故事「希望與傳承」主題</h3>
+         <div class="burger-text-2">
+       <span> 簡介:
+電視動畫《AIR》是根據Key社同名遊戲改編
+的動畫作品，由京都動畫製作。于2005年1月6日首播，共12話。
+內容:
+國崎往人為了聽從已故母親的遺言，四處旅行目的
+是為了尋找並解救「天空中的女孩」，途中以用
+法術表演人偶為生。一天，往人來到一個地處海邊的小鎮，
+在那裡遇上了神尾觀鈴，並暫時寄宿在觀鈴家，後來往人
+在和觀鈴的一路相處之下，覺得可能觀鈴就是他一直要
+尋找的那個女孩子。</span>
+      </div>
+      </div>
+      <div class="burger burger-3"><h3>KANON(冬系列)故事「奇蹟、夢、愛情、友情、希望」主題</h3>
+        <div class="burger-text-3">
+      <span> 簡介
+《Kanon》改編自同名遊戲作品，2002年由東映動畫改編為電視動畫劇情，
+即動畫版第一作（也稱東映版、舊版、第一季），由伊藤尚往執導，共13集。
+該片講述了故事的主人公相澤祐一與五個女孩相遇的故事。
+內容:
+父母到国外工作，被一個人留在國內到高中畢業的相澤佑一，
+因轉學而再度來到這個七年不見的北方小镇。迎接他的是小時候的玩伴，
+也是表親的水瀨名雪。七年前失去的、重要的記憶、曾經在這個街道上
+認識的人、被遺忘的約定，雖然是在寒冷的冬天，還是開始慢慢的解凍。
+與七年後的現實所交錯的記憶，随著時間緩慢浮現在腦海中。</span>
+      </div>
+    </div>
+  </div>
+    <div id = "bot4" class="black-6"><h1>KEY介紹</h1></div>
+    <div class="black-7">
+   <div class="black-7-l"><h1>歷史:</h1>
+    <div class="black-7-l-t">
+    <div class="black-7-l-b">
+      <div class="black-7-l-b-text">
+        <h1>歷史:</h1>
+<span> 在KEY成立以前，曾經制作了兩部幾乎是由之前KEY
+的原班人馬所制作的作品，
+分別為《MOON》和《ONE～輝之季節～》
+（原制作公司為Tactic，
+但制作班底主要是後來加入Key的制作人員）
+這兩款遊戲知名度雖然不如KEY的
+正式作品《Kanon》和《AIR》，
+音樂方面也沒有I've的參與，但無論劇本還是
+音樂方面的水準都相當的高，《ONE～輝く季節へ～》
+更是被譽為泣きゲー的鼻祖作品。
+這兩部作品的成功也使得KEY的實力鋒芒初現。
+之后《MOON》與《ONE～輝く季節へ～》
+的大部分制作班底退社轉投ビジュアルアーツ（Visual Art's）
+，並于1998年年底成立的新的品牌“Key”。</span>
+</div>
+      </div>
+    </div>
+   </div>
+
+   <div class="black-7-r"><h1>三大作品 遊戲&作品 出售時間</h1>
+    <div class="black-7-r-t">
+      <div class="black-7-r-t-l">
+        <div class="black-7-r-t-l-t"></div>
+        <div class="black-7-r-t-l-b">
+          <span> <h1>Clannad</h1>  2004-04-28所推出視覺小說</span>
+          <p>第一季《Clannad》動畫 2007-10-04播出</p>
+          <p>第二季《Clannad》動畫 2008-03-27播出</p>
+        </div>
+      </div>
+      <div class="black-7-r-t-r">
+        <div class="black-7-r-t-r-t"></div>
+        <div class="black-7-r-t-r-b">
+         <h1>AIR</h1>  2000-09-08所推出視覺小說
+         <p>《Air》動畫 2004-11-17日播出</p> 
+        <p>2005-02-05，91分鐘《AIR》動畫電影</p> 
+        </div>
+      </div>
+    </div>
+    <div class="black-7-r-b">
+    <div class="black-7-r-b-center"></div>
+      <div class="black-7-r-b-text">
+        <h1>Kanon</h1>  1999-06-04日所推出的視覺小說
+        第一版《Kanon》動畫2002-01至3月播出
+      <p>第二版《Kanon》動畫 2006-10-05日播映</p>  
+    </div>
+    </div>
+   </div>
+  </div>
+    <div id = "bot3" class="black-8"><h1>key作品特點</h1> </div>
+
+    <div class="black-9">
+      <div class="black-9-l">
+        <div id="example-3">
+          <h2>家族，親情，愛情，友情，奇蹟，未來，希望</h2>
+          <div class="image">
+              <div class="mask">
+                  <div class="text">
+                      <span>KEY社的作品永遠閃耀著人性的光輝,
+                          絕大多數人看了KEY社的作品都會落淚，
+                          可是落淚的同時我們卻在幸福的微笑著。
+                          在溫馨而美好的音樂中我們潸然淚下，
+                          留在心頭的卻是讓人無法釋懷的美麗與愛，
+                          還有對未來的憧憬。</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+      <div class="black-9-r">
+      <div id="example-1">
+        <p><h2>人性的理解</h2></p>
+        <div class="image-1">
+            <div class="mask-1">
+                <div class="text-1">
+                    <span>KEY成功，靠的不是“美輪美奐”的畫面，
+                        也不是”精彩刺激”的劇情，是對人性的理解。
+                       <p>《ONE》珍惜人與人之間的羈絆</p> 
+                       <p>《Kanon》像一個童話故事</p> 
+                       <p>《AIR》遙不可及的神話般的故事</p> 
+                       <p>《CLANNAD》強調親情</p> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+    <div class="black-10">
+      <div class="black-10-r">
+        <div id="example-2">
+          <p><h2>傳達</h2></p>
+          <div class="image-2">
+              <div class="mask-2">
+                  <div class="text-2">
+                      <span>KEY要傳達給我們，並不是一種消極的思想或者灰色
+                          的人生觀，相反， 在我們深受感動的同時，是KEY讓
+                          我們明白了“溫柔”與“堅強”的真諦，是KEY給予
+                          了我們無論受到多大的挫折，哪怕只剩下最後的一口
+                          呼吸，也要繼續頑強地走下去的勇氣！ KEY，一個嶄
+                          新的名字，一個奇蹟般的名字，一個無可替代的名字。</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+      <div class="black-10-l">
+        <div id="example-4">
+          <p><h1>季節戀曲</h1> </p>
+          <div class="image-4">
+              <div class="mask-4">
+                  <div class="text-4">
+                      <span>
+                         <p>「春」的《CLANNAD》</p> 
+                         <p>「夏」的《AIR》</p>  
+                         <p>「秋」的《One》</p> 
+                         <p>「冬」的《Kanon》</p></span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+    <div class="black-11-text">
+      點擊左邊圖片 會有翻書效果
+      <p>關於三神作</p>
+    </div>
+    <div class="black-11">
+      <div id="card" class="card">
+        <div class="l"></div>
+        <div class="r"><h2>總有一種感動，常常不見，卻又時常想念。</h2>
+          <p>春天的櫻花</p> 
+          <p>在長長的坡道上飛舞的漫天絢爛</p>
+          <p>-----------------------------------------------------</p>
+          <p>夏夜的螢火</p> 
+          <p> 穿梭在林間訴說著千年的傳說</p> 
+          <p>-----------------------------------------------------</p>
+          <p>冬日的落雪</p> 
+          <p> 是誰拂去了圍巾上沉積的曠古冰寒</p> 
+          <p>-----------------------------------------------------</p>
+          <p>家族之愛，飛鳥之詩，思念之鄉。</p>
+          <p>-----------------------------------------------------</p> 
+          不是依附在我們的生命裡，卻是在別人的生命裡感動我們，
+          於是終要將它們滿懷感動地擁入心懷 . . .」</div>
+        <div class="front">
+            <h3> Front </h3>
+        </div>
+        <div class="back">
+              <h3> Back </h3>
+        </div>
+    </div>
+    </div>
+  </div>
+  <a href="#top"> <div class="Z1">回到過去</div></a>
+  </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo"></div>
+    <div class="footer-font">©VISUAL ARTS / Key</div>
+  </div>
+
+  <!------------------------------------------------------------------------------------------>
+
+  <script>
+    //---------主角：輪播圖函数-------------
+    function slideshow() {
+      var slideshow = document.getElementById("slideshow"),
+        imgs = slideshow.getElementsByTagName("img"), //得到圖片们
+        pages = slideshow.getElementsByTagName("span"), //得到頁碼们
+        descrips = slideshow.getElementsByTagName("p"), //得到描述们
+        current = 0; //current為當前活耀的圖片编號
+      function slideOff() {
+        imgs[current].className = ""; //圖片淡出
+        pages[current].className = "";
+        descrips[current].className = "";
+      }
+      function slideOn() {
+        imgs[current].className = "active"; //圖片淡入
+        pages[current].className = "active";
+        descrips[current].className = "active";
+      }
+      function changeSlide() { //切换圖片的函数
+        slideOff();
+        current++; //自增1
+        if (current >= 3) current = 0;
+        slideOn();
+      }
+      //每2s調用changeSlide函数進行圖片輪播
+      var slideon = setInterval(changeSlide, 2000);
+      slideshow.onmouseover = function () {
+        clearInterval(slideon); //當鼠標移入時清除輪播事件
+      }
+      slideshow.onmouseout = function () {
+        slideon = setInterval(changeSlide, 2000); //當鼠標移出時重新開始輪播事件
+      }
+
+      for (var i = 0; i < pages.length; i++) { //定義鼠標移入和移出頁碼事件
+        pages[i].onmouseover = function () {
+          slideOff(); //圖片淡出
+          current = this.innerHTML - 1; //得到鼠標停留的頁碼對應的current
+          slideOn(); //圖片淡出
+        }
+      }
+    }
+    slideshow();
+  </script>
+  <script>
+
+    var tabs_btn = document.querySelectorAll(".tabs-btn")
+    var tabs_content = document.querySelectorAll(".tabs-content")
+
+    for (let index = 0; index < tabs_btn.length; index++) {
+      const tabs_btns = tabs_btn[index];
+      const tabs_contents = tabs_content[index];
+
+
+      tabs_btns.onclick = function () {
+        clearAllActive()
+        tabs_btns.classList.add("active")
+        tabs_contents.classList.add("active")
+      }
+
+
+      document.onclick = function (event) {
+      if (event.target.closest(".tabs-btn")) 
+      { return 
+      } else {
+        clearAllActive()
+      }
+    }
+    }
+    function clearAllActive() {
+      for (let index = 0; index < tabs_btn.length; index++) {
+        tabs_btn[index].classList.remove("active")
+        tabs_content[index].classList.remove("active")
+      }
+    }
+  </script>
+<script>
+  document.getElementById("card").addEventListener("click",function(e){
+  if(this.className.search("flip") === -1)
+      this.className = this.className + " flip";
+  else
+      this.className = "card";    
+});
+</script>
+</body>
+
+</html>
