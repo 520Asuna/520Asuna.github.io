@@ -13,7 +13,7 @@
     }
 
     body {
-      background-image: url('../img/all/back35.png');
+      background-image: url('../img/clannad/23.jpg');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center;
@@ -65,7 +65,7 @@
       /*初始不透明度為0，圖片都看不见*/
       transition: opacity 1s linear;
       /*--重點--定義一個關于透明度的transition*/
-      border-radius: 90px;
+      border-radius: 30px;
       border: black 1px solid;
     }
 
@@ -84,14 +84,14 @@
 
     #slideshow span {
       display: inline-block;
-      width: 25px;
-      line-height: 25px;
+      width: 50px;
+      line-height: 50px;
       /*當只有一行文本時height等于line-height*/
       border-radius: 25px;
       /*設置頁碼為圓形*/
       margin: 0 15px;
       background: white;
-      font-size: 16px;
+      font-size: 20px;
     }
 
     #slideshow span.active {
@@ -203,11 +203,13 @@
       height: 80px;
       width: 100%;
       text-align: center;
+      
     }
 
     .tabs-btn-group {
       display: flex;
       margin-bottom: 10px;
+      
     }
 
     .tabs-btn-group .tabs-btn {
@@ -231,6 +233,7 @@
     .tabs-btn-group .tabs-btn.active {
       background-color: hotpink;
       font-size: 20px;
+    
     }
 
     .tabs-content-group .tabs-content {
@@ -239,6 +242,15 @@
       border-radius: 50px;
       padding: 20px 10px;
       display: none;
+      border: 1px solid black;
+      text-align: center;
+      text-shadow: 0px 3px 0px #b2a98f,
+
+                 0px 14px 10px rgba(0,0,0,0.15),
+
+                 0px 24px 2px rgba(0,0,0,0.1),
+
+                 0px 34px 30px rgba(0,0,0,0.1);
     }
 
     .tabs-content-group .tabs-content.active {
@@ -395,6 +407,7 @@
         padding-left: 20px;
         margin-left: 20px;
         border: black 1px solid;
+        
     }
 
     .burger:hover .burger-text  {
@@ -416,6 +429,8 @@
       position: absolute;
       bottom: 0px;
       left: 10%;
+      text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+      
     }
      .burger-text-2 {
       opacity: 0;
@@ -423,6 +438,7 @@
       position: absolute;
       bottom: 0px;
       left: 10%;
+      text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
     }
    .burger-text-3 {
       opacity: 0;
@@ -430,6 +446,7 @@
       position: absolute;
       bottom: 0px;
       left: 10%;
+      text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
     }
     .burger-2{
         background-image: url(../img/air/1-10.png);
@@ -448,7 +465,7 @@
     }
     .black-7{
       width: 100%;
-      height: 950px;
+      height: 700px;
       display: flex;
       
     }
@@ -460,14 +477,14 @@
       
     }
     .black-7-l-t{
-      width: 100%;
-      height: 60%;
-      background-image: url(../img/all/1-2.jpg);
-      background-size: cover;
+      width: 90%;
+      height: 30%;
+      background-image: url(../img/all/1-1.jpg);
+      background-size: contain;
       position: relative;
-      opacity: 80%;
       border-radius: 50px;
       border: solid 1px black;
+      top: 50px;
     }
     .black-7-l-t:hover .black-7-l-b-text {
       bottom: -250px;
@@ -479,13 +496,14 @@
       position: absolute;
       bottom: 0px;
       left: 10%;
-
+      text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
     }
  .black-7-r{
    width: 50%;
    height: 100%;
    margin-left: 50px;
    text-align: center;
+   text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
  }
 .black-7-r-t{
   width: 100%;
@@ -495,14 +513,14 @@
 .black-7-r-t-l{
   width: 50%;
   height: 100%;
+  margin-top: 20px;
 }
 .black-7-r-t-l-t{
-  width: 100%;
-  height: 35%;
+  width: 80%;
+  height: 50%;
   background-image: url(../img/clannad/1-3.png);
   background-size:cover;
-  border-radius: 50%;
-  opacity:80%;
+  border-radius: 50px;
   border: black 1px solid;
 }
 .black-7-r-t-l-b{
@@ -510,23 +528,23 @@
   height: 5%;
   text-align: center;
   font-size: 24px;
-  
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 }
 .black-7-r-t-r{
   width: 50%;
   height: 100%;
+  margin-top: 20px;
 }
 .black-7-r-b{
   width: 100%;
   height: 35%;
 }
 .black-7-r-t-r-t{
-  width: 100%;
-  height: 35%;
+  width: 80%;
+  height: 50%;
   background-image: url(../img/air/1234567.jpg);
   background-size:cover;
-  border-radius: 50%;
-  opacity:80%;
+  border-radius: 50px;
   border: black 1px solid;
   margin-left: 30px;
 }
@@ -535,20 +553,20 @@
   height: 5%;
   text-align: center;
   font-size: 24px;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 }
 .black-7-r-b{
   width: 100%;
-  height: 20%;
-
+  height: 23%;
+  margin-top: 120px;
 }
 .black-7-r-b-center{
-  width: 40%;
+  width: 25%;
   height: 50%;
   margin: auto;
   background-image: url(../img/kanon/images.jpg);
   background-size:cover;
-  border-radius: 80%;
-  opacity:85%;
+  border-radius: 50px;
   border: black 1px solid;
 }
 .black-7-r-b-text{
@@ -578,7 +596,7 @@
 #example-3 .image{
     width: 100%;
     height: 300px;
-    background-image: url(../img/all/back6.jpg);
+    background-image: url(../img/all/back26.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -725,7 +743,7 @@
     cursor: pointer;
     -webkit-perspective: 600px;
     perspective: 600px;
-    background-image: url(../img/all/back10.jpg);
+    background-image: url('../img/clannad/24.jpg');
     background-size:cover;
     margin: auto;
     display:flex;
@@ -741,6 +759,7 @@
   width:100%;
   text-align: center;
   margin:auto;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 }
 
 .card .front {
@@ -777,7 +796,7 @@
     -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
-    background-image: url(../img/all/back38.jpg);
+    background-image: url(../img/clannad/13.jpg);
     background-size: cover;
     
     /* 卡片翻面的動畫時間 */
@@ -809,7 +828,7 @@
     -ms-transform: rotateY(360deg);
     -o-transform: rotateY(360deg);
     transform: rotateY(360deg);
-    background-image: url(../img/air/1-8.jpg);
+    background-image: url(../img/air/1-12.jpg);
     background-size: cover;
 }
 .black-11-text{
@@ -819,13 +838,14 @@
   letter-spacing: 20px;
   font-size: 24px;
   margin-top: 40px;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 }
 .black-11{
   width: 100%;
   margin-bottom: 80px;
 }
 .footer{
-  width: 100vw;
+  width: 100%;
   height: 100px;
   background-color: white;
   text-align: center;
@@ -849,7 +869,7 @@ margin:  auto;
 .Z1{
                 height: 50px;
                 width: 65px;
-                background-image: url(../img/all/back31.jpg);
+                background-image: url(../img/all/back26.jpg);
                 background-size: contain;
                 border-radius: 50%; 
                 text-align: center;
@@ -884,7 +904,7 @@ margin:  auto;
         </div>
         <!-- 插入圖片的描述們 -->
         <p class="active">這是第一幅圖片哈哈哈</p>
-        <p>这是第二幅圖片咩</p>
+        <p>這是第二幅圖片咩</p>
         <p>到第三幅了！</p>
       </div>
       <!-- If we need navigation buttons -->
