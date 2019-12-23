@@ -20,12 +20,12 @@
       background-size: cover;
     }
     .top {
-      height: 1040px;
+      height:1040px;
       width: 100%;
       background-image: url('../img/all/key14.jpg');
       background-size: cover;
     }
-    .animation{
+    /* .animation{
     position: fixed;
     top: 0;
     left: 0;
@@ -84,12 +84,11 @@
             opacity:0;
             z-index: -9999;
         }
-}
+} */
     .all {
       height: 100%;
       width: 1140px;
       margin: auto;
-
     }
 
     .swiper-container {
@@ -261,7 +260,6 @@
       height: 80px;
       width: 100%;
       text-align: center;
-      
     }
 
     .tabs-btn-group {
@@ -278,14 +276,17 @@
       border-radius: 50px;
       margin-right: 20px;
       border: solid 1px black;
+      cursor: pointer;
     }
 
     .tabs-btn-group .tabs-btn-1 {
       background-image: url('../img/air/game.jpg');
+      cursor: pointer;
     }
 
     .tabs-btn-group .tabs-btn-2 {
       background-image: url('../img/kanon/game.jpg');
+      cursor: pointer;
     }
 
     .tabs-btn-group .tabs-btn.active {
@@ -319,7 +320,6 @@
       height: 70px;
       width: 100%;
       text-align: center;
-      
     }
 
     .font-t {
@@ -462,10 +462,10 @@
         background-size: cover;
         border-radius: 10px;
         position: relative;
-        padding-left: 20px;
-        margin-left: 20px;
+        text-align: center;
+        margin-left: 15px;
         border: black 1px solid;
-        
+        cursor: pointer;
     }
 
     .burger:hover .burger-text  {
@@ -509,12 +509,13 @@
     .burger-2{
         background-image: url(../img/air/1-10.png);
         background-size: cover;
-        
+        cursor: pointer;
+  
     }
     .burger-3{
         background-image: url(../img/kanon/1-7.jpg);
         background-size: cover;
-        
+        cursor: pointer;
     }
     .black-6{
       text-align: center;
@@ -543,6 +544,7 @@
       border-radius: 50px;
       border: solid 1px black;
       top: 50px;
+      cursor: pointer;
     }
     .black-7-l-t:hover .black-7-l-b-text {
       bottom: -250px;
@@ -660,9 +662,10 @@
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
     text-align: center;
     border: black 1px solid;
+    cursor: pointer;
 }
 #example-3 .image .mask{
     width: 100%;
@@ -694,9 +697,10 @@
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    margin-left: 20px;
+    margin-left: 10px;
     text-align: center;
     border: black 1px solid;
+    cursor: pointer;
 }
 #example-1 .image-1 .mask-1{
     width: 100%;
@@ -737,9 +741,10 @@
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
     text-align: center;
     border: black 1px solid;
+    cursor: pointer;
 }
 #example-2 .image-2 .mask-2{
     width: 100%;
@@ -769,9 +774,10 @@
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    margin-left: 20px;
+    margin-left: 10px;
     text-align: center;
     border: black 1px solid;
+    cursor: pointer;
 }
 #example-4 .image-4 .mask-4{
     width: 100%;
@@ -801,10 +807,11 @@
     cursor: pointer;
     -webkit-perspective: 600px;
     perspective: 600px;
-    background-image: url('../img/clannad/24.jpg');
+    background-image: url(../img/clannad/24.jpg);
     background-size:cover;
     margin: auto;
     display:flex;
+    
 }
 .l{
   width: 50%;
@@ -823,6 +830,7 @@
 .card .front {
     z-index: 900;
     background: #fff;
+    background-image: url(../img/back/7.jpg);
 }
 
 /* 一開始讓back轉成90度，你就看不到拉 (但是這邊不一定要這樣做) */
@@ -835,7 +843,7 @@
     -ms-transform: rotateY(90deg);
     -o-transform: rotateY(90deg);
     transform: rotateY(90deg);
-    
+    background-image: url(../img/clannad/16.jpg);
 }
 
 .card .front, .card .back {
@@ -875,8 +883,9 @@
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg); 
-    background-image: url(../img/kanon/1-2.jpg);
-    background-size: cover;
+    background-image: url(../img/back/7.jpg);
+    background-size: contain;
+    cursor: pointer;
 }
 /* 將back轉出來 */
 .card.flip .back {
@@ -888,6 +897,7 @@
     transform: rotateY(360deg);
     background-image: url(../img/air/1-12.jpg);
     background-size: cover;
+    cursor: pointer;
 }
 .black-11-text{
   height: 100px;
@@ -934,15 +944,463 @@ margin:  auto;
                 position: fixed;
                 right: 10px;
                 bottom: 10px;
+                cursor: pointer;
             }
             .Z1:hover {
             background-color: yellow;
             transition:0.1s;
         }
+@media(max-width:360px){
+          .animation{
+            display: none;
+          }
+          .all {
+      height: 100%;
+      width: 360px;
+      margin: auto;
+    }
+    .top{
+      height: 550px;
+      background-image: url(../img/clannad/13.jpg);
+      background-size: cover;
+    }
+    .swiper-container {
+      height: 300px;
+      margin: 15px;
+    }
+    #slideshow {
+      width: 100%;
+      height: 300px;
+      margin: 0 auto;
+      /*設置在頁面水平居中*/
+      overflow: hidden;
+      position: relative;
+    }
+    #slideshow p {
+      position: absolute;
+      top: 3px;
+      left: -400px;
+      /*相對于輪播圖左侧左移400px*/
+      line-height: 20px;
+      padding: 5px 30px;
+      font-size: 12px;
+      color: white;
+      background-color: rgba(100, 100, 100, 0.6);
+      /*用rgba設置一個带透明度的背景颜色*/
+      opacity: 0;
+      transition: all 0.5s;
+      border-radius: 50px;
+    }
+    #black-2-1:hover {
+        font-size:2px;
+        transition: 0.3s;
+      }
+      .black-2 .pink{
+        background-color: yellow;
+        opacity:70% ;
+      }
+      .black-2 .blue{
+        background-color: yellow;
+        opacity:70% ;
+      }
+      .black-2 .orange{
+        background-color: yellow;
+        opacity:70% ;
+      }
+      .black-2 .green{
+        background-color: yellow;
+        opacity:70% ;
+      }
+      .tabs-btn-group .tabs-btn {
+      width: 100%;
+      height: 100px;
+      background-image: url('../img/clannad/game.jpg');
+      background-size: contain;
+      border-radius: 90px;
+      margin-right: 15px;
+      border: solid 1px black;
+      cursor: pointer;
+    }
+    .tabs-btn-group .tabs-btn-1 {
+      background-image: url('../img/air/game.jpg');
+      cursor: pointer;
+    }
 
+    .tabs-btn-group .tabs-btn-2 {
+      background-image: url('../img/kanon/game.jpg');
+      cursor: pointer;
+    }
+
+    .tabs-btn-group .tabs-btn.active {
+      background-color: hotpink;
+      font-size: 20px;
+    }
+    
+    .black-font-3 {
+      display: none;
+    }
+
+    .font-t {
+      display: none;
+    }
+   
+    .font-mid {
+  
+      display: none;
+      
+    }
+
+    .font-mid-m {
+      display: none;
+    }
+
+  
+    .font-b {
+      display: none;
+    }
+    .black-5{
+      display: flex;
+      width:100%;
+      height:1200px;
+    }
+    
+    .burger{
+      width: 150px;
+        height:200px;
+        background-size: cover;
+        border-radius: 10px;
+        padding-right:-40px;
+    }
+
+    .burger:hover .burger-text  {
+      bottom: -660px;
+      opacity: 1;
+    }
+    .burger:hover .burger-text-2{
+      bottom: -730px;
+      opacity: 1;
+    }
+    .burger:hover .burger-text-3{
+      bottom: -1000px;
+      opacity: 1;
+    }
+
+    .burger-text {
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      bottom: 0px;
+      left: 10%;
+      text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+      
+    }
+     .burger-text-2 {
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      bottom: 0px;
+      left: 10%;
+      text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+    }
+   .burger-text-3 {
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      bottom: 0px;
+      left: 10%;
+      text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+    }
+    .burger-2{
+        background-image: url(../img/air/1-10.png);
+        background-size: cover;
+        cursor: pointer;
+  
+    }
+    .burger-3{
+        background-image: url(../img/kanon/1-7.jpg);
+        background-size: cover;
+        cursor: pointer;
+    }
+    .black-7{
+      width: 100%;
+      height: 900px;
+      display: flex;
+      
+    }
+    .black-7-l{
+      width: 50%;
+      height: 1024px;
+      text-align: center;
+    }
+    .black-7-l-t{
+      width: 100%;
+      height: 6%;
+      background-image: url(../img/all/1-1.jpg);
+      background-size: cover;
+      position: relative;
+      border-radius: 10px;
+      border: solid 1px black;
+      cursor: pointer;
+    }
+    .black-7-l-t:hover .black-7-l-b-text {
+      bottom: -250px;
+      opacity: 1;
+    }
+    .black-7-l-b-text{
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      top:70px;
+      text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+    }
+ .black-7-r{
+   width: 50%;
+   height: 100%;
+   font-size: 8px;
+   text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+ }
+.black-7-r-t{
+  width: 100%;
+  height: 30%;
+  display:flex;
+}
+.black-7-r-t-l{
+  width: 50%;
+  height: 100%;
+  margin-top: 5px;
+}
+.black-7-r-t-l-t{
+  width: 100%;
+  height: 12%;
+  background-image: url(../img/clannad/1-3.png);
+  background-size:cover;
+  border-radius: 10px;
+  border: black 1px solid;
+}
+.black-7-r-t-l-b{
+  width: 100%;
+  height: 5%;
+  font-size: 12px;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+.black-7-r-t-r{
+  width: 50%;
+  height: 100%;
+  margin-top: 5px;
+}
+.black-7-r-b{
+  width: 100%;
+  height: 15%;
+}
+.black-7-r-t-r-t{
+  width: 100%;
+  height: 12%;
+  background-image: url(../img/air/1234567.jpg);
+  background-size:cover;
+  border-radius: 10px;
+  border: black 1px solid;
+  margin-left: 10px;
+}
+.black-7-r-t-r-b{
+  width: 100%;
+  height: 5%;
+  text-align: center;
+  font-size: 12px;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+.black-7-r-b{
+  width: 100%;
+  height: 23%;
+  margin-top: 120px;
+}
+.black-7-r-b-center{
+  width: 55%;
+  height: 20%;
+  margin: auto;
+  background-image: url(../img/kanon/images.jpg);
+  background-size:cover;
+  border-radius: 10px;
+  border: black 1px solid;
+}
+.black-7-r-b-text{
+  width: 100%;
+  height: 50%;
+  margin: auto;
+  text-align: center;
+}
+.black-9{
+  width: 100%;
+  display: inline-block;
+}
+.black-9-r{
+  width: 100%;
+  text-align: center;
+}
+.black-9-l{
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+}
+#example-3 .image{
+    
+    height: 200px;
+ 
+}
+#example-3 .image .mask{
+    width: 100%;
+    height: 40%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:absolute;
+    bottom: -40%;
+}
+
+#example-3 .image:hover .mask{
+    bottom: 0;
+
+}
+#example-3 .image .mask .text{
+    font-size: 12px;
+
+}
+#example-1 .image-1{
+    height: 200px;
+
+}
+
+#example-1 .image-1 .mask-1 .text-1{
+    font-size: 12px;
+        }
+  .black-10{
+  display: inline-block;
+}
+.black-10-r{
+  width: 100%;
+  
+}
+.black-10-l{
+  width: 100%;
+ 
+}
+#example-2 .image-2{
+    
+    height: 200px;
+  
+}
+#example-2 .image-2 .mask-2{
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:absolute;
+    bottom: -50%;
+    left: 0;
+    transition: 0.3s;
+    
+}
+#example-2 .image-2:hover .mask-2{
+    bottom: 0;
+}
+#example-2 .image-2 .mask-2 .text-2{
+    font-size: 12px;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+}
+#example-4 .image-4{
+    
+    height: 200px;
+    
+}
+#example-4 .image-4 .mask-4{
+    
+    height: 50%;
+    bottom: -50%;
+    
+}
+#example-4 .image-4:hover .mask-4{
+    bottom: 0;
+}
+#example-4 .image-4 .mask-4 .text-4{
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    text-align: center;  
+}
+.black-11-text{
+  font-size: 14px;
+}
+.card {
+    height: 280px;
+    width: 50%;
+    margin: 10px 10px 20px 10px;
+    position: relative;
+    cursor: pointer;
+    -webkit-perspective: 600px;
+    perspective: 600px;
+    background-image: url(../img/clannad/24.jpg);
+    background-size:cover;
+    margin: auto;
+    display:flex;
+    
+}
+.l{
+  width: 100%;
+}
+.r-m{
+  width: 100%;
+  display:inline-flex;
+}
+.r{
+  width:100%;
+  text-align: center;
+  margin:auto;
+  font-size: 6px;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 12;
+  line-height: 18px;
+  height: 200px;
+
+}
+
+.card .front {
+    z-index: 1800;
+    background: #fff;
+    background-image: url(../img/back/7.jpg);
+    background-size: contain;
+}
+
+
+/* flip */
+/* 讓front轉到看不見 */
+.card.flip .front {
+    z-index: 900;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg); 
+    background-image: url(../img/back/2.jpg);
+    background-size: contain;
+    cursor: pointer;
+}
+/* 將back轉出來 */
+.card.flip .back {
+    z-index: 1000;
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+    background-image: url(../img/air/1-12.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+ 
+}
   </style>
 </head>
-
 <body>
   
   <div id = "top" class="top">
@@ -976,17 +1434,18 @@ margin:  auto;
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
     </div>
-    <div id = "black-2-1"class="black-2">
-      <div class="butter pink"><a href="#bot1">
+    <div  id = "black-2-1"class="black-2 " >
+      
+      <div class="butter pink "><a href="#bot1">
           <h2>KEY作品</h2>
         </a></div>
-      <div class="butter blue"><a href="#bot2">
+      <div class="butter blue "><a href="#bot2">
           <h2>KEY三大作品</h2>
         </a></div>
-      <div class="butter orange"><a href="#bot3">
+      <div class="butter orange "><a href="#bot3">
           <h2>KEY作品特點</h2>
         </a></div>
-      <div class="butter green"><a href="#bot4">
+      <div class="butter green "><a href="#bot4">
           <h2>KEY介紹</h2>
         </a></div>
     </div>
@@ -1423,7 +1882,7 @@ margin:  auto;
     </div>
    </div>
   </div>
-    <div id = "bot3" class="black-8"><h1>kEY作品特點</h1> </div>
+    <div id = "bot3" class="black-8"><h1>KEY作品特點</h1> </div>
 
     <div class="black-9">
       <div class="black-9-l">
